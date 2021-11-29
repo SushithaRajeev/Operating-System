@@ -1,0 +1,135 @@
+Script started on Fri 04 Oct 2019 11:52:42 AM CST
+a049856[21]% gdb myshell core.myshell.a049856.10353[17G[K[K[K[K./
+build_project.sh* myshell*          src/              
+inc/              shell_config.ini* test.c*           
+a049856[21]% ./build_project.sh 
+a049856[22]% myshell
+[3;J[H[2J		 [0;32m WELCOME TO toyshell
+[0m	IT OVERWRITES ALL THE ALIASES WHEN readnewnames COMMAND IS EXECUTED
+	EXECUTE help FOR THE LIST OF COMMANDS SUPPORTED BY toyshell
+[1;32mtoyshell[1]> [0m$ Thia   s is a comment - it is treated like a blank line.
+[1;32mtoyshell[1]> [0m          $ This is also a comment.
+[1;32mtoyshell[2]> [0m
+[1;32mtoyshell[2]> [0msleep 1000 -    $ Start a background processes.   .
+[1;32mtoyshell[3]> [0msleep 15 -      $ And another.
+[1;32mtoyshell[4]> [0mbackjobs
+[ID]	[PID]	[status]	[Process]
+[0]	18031	running		sleep	
+[1]	18041	running		sleep	
+[1;32mtoyshell[5]> [0mcp /home/n venus/cs330/hilder/assignment2/alpha file1
+/bin/cp: cannot stat '/home/venus/cs330/hilder/assignment2/alpha': No such file or directory
+[1;32mtoyshell[6]> [0m^[[A    cp /home/venus/hilder/cs330/assignment2/aplhs a fi        datafiles/alpha file1
+[1;32mtoyshell[7]> [0mbackjobs        $ Might still show a p sleep process running.
+[ID]	[PID]	[status]	[Process]
+[0]	18031	running		sleep	
+[1]	18041	exited		sleep	
+[1;32mtoyshell[8]> [0m$ Enter all comments as shown above. Enter all comments
+[1;32mtoyshell[8]> [0m$ shown below as well.
+[1;32mtoyshell[8]> [0mcat file1       $ file  1 should be there.
+apples
+cucumbers
+oranges
+bananas
+grapefruit
+grapes
+tangarines
+grape fruit
+[1;32mtoyshell[9]> [0msleep 1000 -
+[1;32mtoyshell[10]> [0mbackjobs
+[ID]	[PID]	[status]	[Process]
+[0]	18031	running		sleep	
+[1]	18041	exited		sleep	
+[2]	18062	running		sleep	
+[1;32mtoyshell[11]> [0mbackjobs
+[ID]	[PID]	[status]	[Process]
+[0]	18031	running		sleep	
+[1]	18041	exited		sleep	
+[2]	18062	running		sleep	
+[1;32mtoyshell[12]> [0msleep 5
+[1;32mtoyshell[13]> [0msleep 1000 -
+[1;32mtoyshell[14]> [0mbackjobs
+[ID]	[PID]	[status]	[Process]
+[0]	18031	running		sleep	
+[1]	18041	exited		sleep	
+[2]	18062	running		sleep	
+[3]	18073	running		sleep	
+[1;32mtoyshell[15]> [0msleep 20 -
+[1;32mtoyshell[16]> [0mfront  job 01  18031
+NEED TO IMPLIMENT
+[1;32mtoyshell[17]> [0mwho
+shm053   pts/0        Oct  4 10:02 (hercules.cs.uregina.ca)
+elc475   pts/1        Oct  4 11:34 (hercules.cs.uregina.ca)
+shm053   pts/2        Oct  4 11:40
+shm053   pts/3        Oct  4 11:50
+shm053   pts/4        Oct  4 11:52
+[1;32mtoyshell[18]> [0mnewname mycopy cp
+Added new alias to list
+[1;32mtoyshell[19]> [0mnenna   wname dog cat
+Added new alias to list
+[1;32mtoyshell[20]> [0msavenewnames myaliases
+[1;32mtoyshell[21]> [0mwhy
+command not found
+[1;32mtoyshell[22]> [0mmycopy myaliases file2
+[1;32mtoyshell[23]> [0mnewname mycopy rm
+Updated Duplicate Entry
+[1;32mtoyshell[24]> [0mls -
+[1;32mtoyshell[25]> [0massignment2.log   file1  inc	    myshell	      src     typescript
+build_project.sh  file2  myaliases  shell_config.ini  test.c
+
+[1;32mtoyshell[25]> [0mmycopy file2
+[1;32mtoyshell[26]> [0mls
+assignment2.log   file1  myaliases  shell_config.ini  test.c
+build_project.sh  inc	 myshell    src		      typescript
+[1;32mtoyshell[27]> [0msavenewnames myaliases
+[1;32mtoyshell[28]> [0mwhen -
+command not found
+[1;32mtoyshell[29]> [0mnewname mycopy cp
+Updated Duplicate Entry
+[1;32mtoyshell[30]> [0mreadnewnames myaliases
+NEED TO IMPLIMENT, I AM JUST RESTORING THE VALUES FROM FILE
+[1;32mtoyshell[31]> [0mnewnames
+---------------------------------------------
+ALIAS_STORED  |  EQVIVALENT_ALIAS_COMMANDS  |
+---------------------------------------------
+	mycopy    	rm	
+	dog       	cat	
+---------------------------------------------
+
+[1;32mtoyshell[32]> [0mcond { checked       CHECKR ju  myaliases } dog myaliasr es -
+CHECKING FOR READ 
+NUMERIC EXPRESSION IS TRUE
+NEED TO IMLIMENT THE EXECUTION
+[1;32mtoyshell[33]> [0mmkdir junkdir
+[1;32mtoyshell[34]> [0m	cond    COND { CHECKD JUNKDIR       junkdir } rmdir junkdir
+command not found
+[1;32mtoyshell[35]> [0mco p myaliases mysaved  aliases
+[1;32mtoyshell[36]> [0mnotcond { CHECKD myaliases } mycopy myaliases
+CHECKING FOR DIRECTORY
+NOT A DIRECTORY
+NUMERIC EXPRESSION IS FALSE
+NEED TO IMLIMENT THE EXECUTION
+[1;32mtoyshell[37]> [0mbackjobs
+[ID]	[PID]	[status]	[Process]
+[0]	18031	running		sleep	
+[1]	18041	exited		sleep	
+[2]	18062	running		sleep	
+[3]	18073	running		sleep	
+[4]	18074	exited		sleep	
+[5]	18105	exited		ls	
+[1;32mtoyshell[38]> [0mHe  Help      kill backjobs
+kill: cannot find process "backjobs"
+[1;32mtoyshell[39]> [0mkill  _backjobs
+[1;32mtoyshell[40]> [0mbackjobs
+No current backjobs present, try to create using <process_name> - 
+[1;32mtoyshell[41]> [0m^[[A    backjobs
+No current backjobs present, try to create using <process_name> - 
+[1;32mtoyshell[42]> [0mstop
+a049856[23]% 
+a049856[23]% 
+a049856[23]% 
+a049856[23]% 
+a049856[23]% 
+a049856[23]% exit
+exit
+
+Script done on Fri 04 Oct 2019 12:07:20 PM CST

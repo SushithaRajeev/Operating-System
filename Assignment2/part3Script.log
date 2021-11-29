@@ -1,0 +1,38 @@
+Script started on Fri 04 Oct 2019 12:09:48 PM CST
+a049856[21]% myshell
+[3;J[H[2J		 [0;32m WELCOME TO toyshell
+[0m	IT OVERWRITES ALL THE ALIASES WHEN readnewnames COMMAND IS EXECUTED
+	EXECUTE help FOR THE LIST OF COMMANDS SUPPORTED BY toyshell
+[1;32mtoyshell[1]> [0mls
+assignment2.log   file1  junkdir    mysavedaliases  shell_config.ini  src     typescript
+build_project.sh  inc	 myaliases  myshell	    special.log       test.c
+[1;32mtoyshell[2]> [0mpwd
+/home/hercules/s/shm053/cs330/assignments/assignment2/backup
+[1;32mtoyshell[3]> [0mls -l
+total 120
+-rw------- 1 shm053 csugrd  5275 Oct  4 12:07 assignment2.log
+-rwx------ 1 shm053 csugrd   129 Oct  4 11:37 build_project.sh
+-rw------- 1 shm053 csugrd    74 Oct  4 11:56 file1
+drwx------ 2 shm053 csugrd  4096 Oct  4 11:37 inc
+drwx------ 2 shm053 csugrd  4096 Oct  4 12:02 junkdir
+-rw------- 1 shm053 csugrd    18 Oct  4 12:01 myaliases
+-rw------- 1 shm053 csugrd    18 Oct  4 12:03 mysavedaliases
+-rwx------ 1 shm053 csugrd 76216 Oct  4 11:52 myshell
+-rwx------ 1 shm053 csugrd    94 Oct  4 11:37 shell_config.ini
+-rw------- 1 shm053 csugrd     0 Oct  4 12:09 special.log
+drwx------ 2 shm053 csugrd  4096 Oct  4 11:37 src
+-rwx------ 1 shm053 csugrd     3 Oct  4 11:37 test.c
+-rw------- 1 shm053 csugrd     0 Oct  4 11:50 typescript
+[1;32mtoyshell[4]> [0mhistory
+   1  ls
+   2  pwd
+   3  ls -l
+   4  history
+[1;32mtoyshell[5]> [0mclear_hos  istory
+[1;32mtoyshell[6]> [0mhistory
+   1  history
+[1;32mtoyshell[7]> [0mstop
+a049856[22]% exit
+exit
+
+Script done on Fri 04 Oct 2019 12:10:20 PM CST
